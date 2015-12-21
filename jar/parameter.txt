@@ -1,0 +1,37 @@
+# Use '#' to add comments
+# ---------------------------------------------------------
+# Global parameter settings
+# ---------------------------------------------------------
+testDir=data # location of the tests
+preds=genie.txt # predictions that should be considered if allPreds is false
+allPreds=false # consider all the predictions in the folder, or only those specified in 'preds'
+workersAvailable=4 # amount of threads that should be spawned ( best <= amount of cores available on machine )
+totalIterations=75 # the total amount of iterations the algorithm should run
+cutoff=750 # the top X links of the ranking that should re-ordered
+chuncks=50 # the increase in size of subsequent subnetworks
+chunckIncrease=0.5 # the increase in penalty coefficient for subsequent subnetworks
+modifyEachTurn=70 # the maximum amount of modifications each turn (sampled uniform [1,modifyEachturn]
+moveEachTurn=50 # the maximum amount a link can move in the ranking in one modification, sampled uniform [-moveEachTurn, +moveEachTurn]
+startTemperature=5100.0 # the starting temperature of the annealing schedule
+maxIterations=20000# the amount of turns of modification in one iteration
+temperatureAutoDetermination=true # use an automatic scheme to set the temperature to a certain range
+determinationZone=0.1 # at which % of progress should we check if the temperature was set correctly ( default 0.1 =10%)
+temperatureTargetGoal=0.12 # the average target temperature of the automatic temperature scheme 
+temperatureAllowedDeviation=0.0025  # the allowed deviation of the target goal without rebooting
+outputDirString=output
+# ---------------------------------------------------------
+# ADD LOGGERS HERE, previous parameters should be set
+# ---------------------------------------------------------
+LOGGERS=
+AcceptanceLogger=100=AcceptanceLogger.txt
+PenaltiesLogger=100=PenaltiesLogger.txt
+# ---------------------------------------------------------
+# ADD PENALTYFUNCTIONS HERE, previous parameters and loggers should be set
+# ---------------------------------------------------------
+PENALTIES=
+TFSparsityPenalty=25.0=-0.001=1000=0.85=0=1.001=176
+GraphletG4Penalty=3.0=-0.001=7000=0.90=0=1.001=700
+AntiDominatePenalty=75.000000000000
+PredictionConfidencePenalty=0.00001
+# ---------------------------------------------------------
+# -------------------
