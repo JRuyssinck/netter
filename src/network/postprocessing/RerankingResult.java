@@ -112,7 +112,7 @@ public class RerankingResult {
 						}
 					}	
 				}
-				writer.write(firstCol[j] + "\t" + secondCol[j]+ "\t" + sums[j] + "\t" + originalRanks[j] + "\n");
+				writer.write(firstCol[j] + "\t" + secondCol[j]+ "\t" + sums[j]  + "\n");
 				count++;
 				last = next;
 				

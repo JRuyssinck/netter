@@ -184,7 +184,8 @@ public class Network {
 
 
 				if (firstString.equals(secondString)) {
-					System.out.println("Adding a self-regulating link, this link will be deleted");
+					System.out.println("Adding a self-regulating link, this link will be deleted and an extra link will be read from file.");
+					j--;
 					s = reader.readLine();
 					continue;
 				}
